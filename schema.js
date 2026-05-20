@@ -1,5 +1,6 @@
 const Joi = require("joi");
 
+//server side validation for listing schema
 module.exports.listingSchema = Joi.object({
     title: Joi.string().required(),
 
@@ -17,7 +18,7 @@ module.exports.listingSchema = Joi.object({
     country: Joi.string().required(),
 });
 
-
+//server side validation for review schema
 module.exports.reviewSchema = Joi.object({
     review: Joi.object({
         rating: Joi.number().min(1).max(5).required(),
